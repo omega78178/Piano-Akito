@@ -25,7 +25,7 @@
 </nav>
 
 <!-- Hero section -->
-<section class="h-screen bg-[url('/images/piano.jpg')] bg-cover bg-center bg-fixed relative">
+<section class="h-screen bg-[url('/public/images/piano.jpg')] bg-cover bg-center bg-fixed relative">
     <!-- donkere overlay -->
     <div class="absolute inset-0 bg-black/60"></div>
 
@@ -36,12 +36,59 @@
             <p class="text-xl">   I want to create an opportunity where you can share your interest
                 and hobby 🎶</p>
 
-            <a href="#arrow">
-                <img src="{{ asset('images/heroicons-chevron-down-icon.png') }}" alt="Scroll down" class="mx-auto w-10 h-10 animate-bounce">
+            <a href="#arrow" class="block mt-8">
+                <!-- Zet arrow.png in public/images/arrow.png -->
+                <img src="{{ asset('images/arrow.png') }}"
+                     alt="Scroll"
+                     class="mx-auto w-14 h-14 object-contain animate-bounce"
+                     loading="lazy">
+
             </a>
         </div>
     </div>
 </section>
+
+<!-- About Omega Section -->
+<section id="about-omega" class="relative bg-gradient-to-b from-gray-400 to-gray-500 py-60 px-20 ">
+    <div class="max-w-6xl mx-auto md:flex md:flex-row-reverse gap-12 items-center md:right-12">
+
+    <!-- Tekstgedeelte -->
+        <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                About Akito
+            </h1>
+            <p class="text-gray-700 leading-relaxed mb-8">
+                Akito has played many piano covers, especially from anime and video
+                games, bringing their unique interpretation and emotion into each
+                performance. Their repertoire includes iconic pieces from series
+                like <span class="font-semibold">Attack on Titan</span>,
+                <span class="font-semibold">Naruto</span>, and
+                <span class="font-semibold">Final Fantasy</span>, captivating
+                audiences with a blend of technical mastery and heartfelt
+                expression. Beyond covers, Akito also explores original compositions
+                and creative arrangements, continuously refining their musical
+                style.
+            </p>
+            <a href="{{ url('/about') }}"
+               class="inline-block px-6 py-3 bg-black text-white font-medium rounded-xl shadow-md hover:bg-blue-800 transition">
+                Find Out More
+            </a>
+        </div>
+
+        <!-- Socials include -->
+        <div class="flex flex-col items-center md:items-start">
+            @include('assets.socials')
+        </div>
+
+        <!-- Afbeelding -->
+        <div class="flex justify-center">
+            <img src="{{ asset('images/Omega.jpg') }}"
+                 alt="Omega"
+                 class="w-300 h-72 rounded-full border-4 border-white shadow-lg object-cover">
+        </div>
+    </div>
+</section>
+
 
 <div id="arrow" class="pt-12">
     <p class="text-center">Hier komt je content onderaan</p>
