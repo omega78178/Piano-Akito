@@ -3,7 +3,6 @@
     <a href="https://www.instagram.com/akitopiano/" target="_blank" rel="noopener" class="hover:scale-110 transition-transform">
         <img src="{{ asset('images/instagram.png')}}" class="w-14 h-11">
     </a>
-
     <!-- YouTube -->
     <a href="https://www.youtube.com/channel/UC6WGluk5Ga1dXxBWmemV_pg" target="_blank" rel="noopener" class="hover:scale-110 transition-transform">
         <img src="{{ asset('images/Youtube.png')}}" class="w-14 h-14 relative bottom-1">

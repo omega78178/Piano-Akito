@@ -13,8 +13,9 @@
 
 {{-- Content --}}
 <main class="pt-24 max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">About</h1>
+    <h1 class="text-3xl font-bold mb-6">Sheets</h1>
 </main>
 
 </body>
 </html>
+<?php
