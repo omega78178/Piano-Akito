@@ -11,7 +11,36 @@
       x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })">
 
 <!-- Navbar -->
-@include('assets.navbar')
+<nav id="main-nav" class="font-open-sans fixed w-full top-0 z-50 bg-transparent transition-colors duration-500">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center justify-center h-20">
+            <img src="{{ asset('images/LogoAkito.png') }}"
+                 alt="Logo Akito"
+                 class="h-full w-auto object-contain" />
+        </div>
+        <ul class="flex gap-6">
+            <li><a href="{{ url('/') }}" class="text-white hover:text-blue-400">Home</a></li>
+            <li><a href="{{ url('/news') }}" class="text-white hover:text-blue-400">News</a></li>
+            <li><a href="{{ url('/about') }}" class="text-white hover:text-blue-400">About</a></li>
+            <li><a href="{{ url('/contact') }}" class="text-white hover:text-blue-400">Contact</a></li>
+            <li><a href="{{ url('/sheets') }}" class="text-white hover:text-blue-400">Sheets</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('main-nav');
+        if(window.scrollY > 10){
+            nav.classList.add('bg-black', 'shadow-md');
+            nav.classList.remove('bg-transparent');
+        } else {
+            nav.classList.remove('bg-black', 'shadow-md');
+            nav.classList.add('bg-transparent');
+        }
+    });
+</script>
+
 
 <!-- Hero section -->
 <section class="h-screen bg-[url('/public/images/piano.jpg')] bg-cover bg-center bg-fixed relative">
@@ -20,12 +49,12 @@
 
     <!-- content bovenop -->
     <div class="relative flex items-center justify-center h-full text-center text-white">
-        <div class="p-8">
+        <div class="p-8 border-100 border-white/0 bg-white/10 rounded-lg">
             <h1 class="text-5xl font-bold mb-4">Welcome to My Piano Blog</h1>
-            <p class="text-xl">   I want to create an opportunity where you can share your interest
+            <p class="inter text-xl">I want to create an opportunity where you can share your interest
                 and hobby 🎶</p>
 
-            <a href="#arrow" class="block mt-8">
+            <a href="#about-akito" class="block mt-8">
                 <!-- Zet arrow.png in public/images/arrow.png -->
                 <img src="{{ asset('images/arrow.png') }}"
                      alt="Scroll"
@@ -38,16 +67,16 @@
 </section>
 
 <!-- About Omega Section -->
-<section id="about-akito" class="bg-[linear-gradient(180deg,#3a3a3a_11%,#f2f2f2_230%)]
+<section id="about-akito" class="bg-white=
  py-60 px-20 ">
     <div class="max-w-6xl mx-auto md:flex md:flex-row-reverse gap-12 items-center md:right-12">
 
         <!-- Tekstgedeelte -->
         <div>
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-black mb-6">
                 About Akito
             </h1>
-            <p class="text-white leading-relaxed mb-8">
+            <p class="text-black leading-relaxed mb-8">
                 Akito has played many piano covers, especially from anime and video
                 games, bringing their unique interpretation and emotion into each
                 performance. Their repertoire includes iconic pieces from series
@@ -61,7 +90,7 @@
             </p>
             <a href="{{ url('/about') }}"
                class="inline-block px-6 py-3 bg-black text-white font-medium rounded-xl shadow-md hover:bg-blue-800 transition">
-                Find Out More
+                Find Out More >
             </a>
         </div>
 
@@ -79,7 +108,7 @@
     </div>
 </section>
 
-<div class="text-center py-20 bg-[linear-gradient(180deg,#f3e6cf_0%,#fff8e7_100%)] border-t border-[#e6d8b8]/30">
+<div class="text-center py-20 bg-white border-t border-[#e6d8b8]/30">
     <div class="Sheet-link mb-8">
         <h1 class="text-4xl font-bold mb-6 text-gray-800">Sheets</h1>
 
@@ -102,19 +131,9 @@
     </div>
 </div>
 
-
-<div id="arrow" class="pt-12">
-    <p class="text-center">Hier komt je content onderaan</p>
+<div class="">
+    @include('assets.footer')
 </div>
-<!-- Content -->
-<main class="container mx-auto p-6 mt-6">
-    @yield('content')
-</main>
-
-<!-- Footer -->
-<footer class="bg-white shadow-inner text-center p-4 mt-6">
-    <p class="text-sm text-gray-600">© 2025 PianoSite - Gemaakt met ❤️ en Laravel</p>
-</footer>
 
 </body>
 </html>

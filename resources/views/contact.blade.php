@@ -6,12 +6,12 @@
     <title>Nieuws - PianoSite</title>
     @vite('resources/css/app.css') {{-- Tailwind laden --}}
 </head>
-<body class="bg-gray-400 text-gray-900">
+<body class="bg-white text-gray-900">
 
 {{-- Navbar --}}
 @include('assets.navbar')
 
-<section class="pt-24 max-w-4xl mx-auto p-6">
+<section class="pt-24 max-w-4xl mx-auto p-8">
     <h1 class="text-center text-3xl font-bold mb-6">Contact</h1>
     <p class="text-center text-xl">Have a question or just want to chat? Feel free to reach out! I’d love to hear from you.
         Whether it’s about sheet music, collaborations, or anything else, I’m happy to help!</p>
@@ -41,8 +41,8 @@
     </form>
 </main>
 
-<div class="flex flex-col items-center md:items-start">
-    @include('assets.socials')
+<div>
+    @include('assets.footer')
 </div>
 
 </body>
