@@ -1,5 +1,5 @@
-<nav class="fixed w-full top-0 z-50 bg-black = window.scrollY > 50)"
-     :class="scrolled ? 'bg-black/90 shadow-md text-white' : 'bg-transparent text-white'">
+{{-- resources/views/assets/navbar.blade.php --}}
+<nav id="main-nav" class="font-open-sans fixed w-full top-0 z-50 bg-transparent transition-colors duration-500">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center justify-center h-20">
             <img src="{{ asset('images/LogoAkito.png') }}"
@@ -15,3 +15,16 @@
         </ul>
     </div>
 </nav>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const nav = document.getElementById('main-nav');
+        if(window.scrollY > 10){
+            nav.classList.add('bg-black', 'shadow-md');
+            nav.classList.remove('bg-transparent');
+        } else {
+            nav.classList.remove('bg-black', 'shadow-md');
+            nav.classList.add('bg-transparent');
+        }
+    });
+</script>

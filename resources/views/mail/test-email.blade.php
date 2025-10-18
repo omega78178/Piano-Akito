@@ -1,3 +1,4 @@
-Hey {{$name}}
-Ik ben het Akito :)
-Mailtrap
+<p>Naam: {{ $name }}</p>
+<p>Email: {{ $email }}</p>
+<p>Bericht: {{ $userMessage }}</p>
+

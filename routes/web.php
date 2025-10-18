@@ -1,7 +1,6 @@
 <?php
 
-use App\Mail\MyTestEmail;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,8 +23,5 @@ Route::get('/sheets', function () {
     return view('sheets');
 });
 
-Route::get('/testroute', function () {
-    $name = "Akito Piano";
+Route::post('/contact', [ContactController::class, 'submit']);
 
-    Mail::to('alex2205nguyen@gmail.com')->send(new MyTestEmail($name));
-});
