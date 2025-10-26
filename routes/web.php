@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,4 +25,7 @@ Route::get('/sheets', function () {
 });
 
 Route::post('/contact', [ContactController::class, 'submit']);
+
+Route::resource('news', NewsController::class);
+
 

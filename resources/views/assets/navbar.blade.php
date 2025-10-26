@@ -1,11 +1,14 @@
 {{-- resources/views/assets/navbar.blade.php --}}
 <nav id="main-nav" class="font-open-sans fixed w-full top-0 z-50 bg-transparent transition-colors duration-500">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center justify-center h-20">
-            <img src="{{ asset('images/LogoAkito.png') }}"
-                 alt="Logo Akito"
-                 class="h-full w-auto object-contain" />
+        <div class="flex items-center justify-center">
+            <a href="{{ url('/') }}" class="flex items-center">
+                <img src="{{ asset('images/LogoAkito.png') }}"
+                     alt="Logo Akito"
+                     class="h-30 w-auto object-contain" />
+            </a>
         </div>
+
         <ul class="flex gap-6">
             <li><a href="{{ url('/') }}" class="text-white hover:text-blue-400">Home</a></li>
             <li><a href="{{ url('/news') }}" class="text-white hover:text-blue-400">News</a></li>
@@ -19,7 +22,7 @@
 <script>
     window.addEventListener('scroll', function() {
         const nav = document.getElementById('main-nav');
-        if(window.scrollY > 10){
+        if (window.scrollY > 10) {
             nav.classList.add('bg-black', 'shadow-md');
             nav.classList.remove('bg-transparent');
         } else {

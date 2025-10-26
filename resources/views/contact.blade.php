@@ -11,7 +11,7 @@
 {{-- Navbar --}}
 @include('assets.navbar')
 
-<section class="relative h-[75vh] bg-[url('/public/images/frontpiano.jpg')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-64">
+<section class="relative h-[75vh] bg-[url('/public/images/frontpiano.jpg')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
     <!-- Donkere overlay alleen over de achtergrond -->
     <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
     <!-- Content bovenop de overlay -->
@@ -21,7 +21,7 @@
 </section>
 
 {{-- Contact Content --}}
-<main class="py-10 bg-gray-400">
+<main class="py-10 bg-white">
     <p class="text-center text-lg max-w-2xl mx-auto py-8">
         Have a question or just want to chat? Feel free to reach out! I’d love to hear from you.
         Whether it’s about sheet music, collaborations, or anything else, I’m happy to help!
