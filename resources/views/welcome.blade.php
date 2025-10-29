@@ -36,7 +36,7 @@
     </div>
 </section>
 
-<!-- About Omega Section -->
+<!-- About Akito Section -->
 <section id="about-akito" class="bg-white=
  py-60 px-20 ">
     <div class="max-w-6xl mx-auto md:flex md:flex-row-reverse gap-12 items-center md:right-12">
