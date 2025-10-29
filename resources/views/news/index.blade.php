@@ -11,9 +11,19 @@ use Illuminate\Support\Str; @endphp
 <body class="bg-gray-100 text-gray-900">
 @include('assets.navbar')
 
-<main class="pt-24 max-w-4xl mx-auto p-6">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold">Nieuws</h1>
+<!-- Hero section -->
+<section class="relative h-[75vh] bg-[url('/public/images/nieuws.jpg')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
+    <!-- Donkere overlay alleen over de achtergrond -->
+    <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
+    <!-- Content bovenop de overlay -->
+    <div class="relative">
+        <h1 class="text-center text-3xl font-bold mb-6 text-white">News</h1>
+    </div>
+</section>
+
+<main class="pt-24 max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-12">
+
         <form action="{{ route('news.create') }}" method="GET">
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
                 Nieuw bericht toevoegen
