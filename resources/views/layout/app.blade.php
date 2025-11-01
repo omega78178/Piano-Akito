@@ -3,23 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nieuws - PianoSite</title>
-    @vite('resources/css/app.css') {{-- Tailwind laden --}}
+    <title>@yield('title', 'PianoSite')</title>
+    @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100 text-gray-900">
-
-{{-- Navbar --}}
 @include('assets.navbar')
-
-{{-- Content --}}
+@yield('hero')
 <main class="pt-24 max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6">Akito's library</h1>
+    @yield('content')
 </main>
-
-<div>
-    @include('assets.footer')
-</div>
-
+@include('assets.footer')
 </body>
 </html>
-<?php
