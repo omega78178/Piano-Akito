@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@php use Illuminate\Support\Carbon;use Illuminate\Support\Str; @endphp
+    <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -74,6 +75,58 @@
             <img src="{{ asset('images/Omega.jpg') }}"
                  alt="Omega"
                  class="w-300 h-72 rounded-full border-4 border-white shadow-lg object-cover">
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section id="news" class="bg-gray-50 py-20 border-t border-[#e6d8b8]/30">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6 text-gray-800 text-center">News</h2>
+
+        @if(isset($news) && $news->count())
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @foreach($news as $post)
+                    <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition group flex flex-col overflow-hidden">
+                        @if($post->image)
+                            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
+                                 class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition" />
+                        @endif
+                        <div class="p-6 flex flex-col flex-1 h-full">
+                            <h3 class="font-bold text-xl text-blue-900 mb-2 group-hover:text-blue-700 transition">
+                                <a href="{{ route('news.show', $post->id) }}" class="hover:underline">
+                                    {{ \Illuminate\Support\Str::limit($post->title, 60, '...') }}
+                                </a>
+                            </h3>
+                            <div class="text-gray-600 leading-relaxed mb-3">
+                                {{ \Illuminate\Support\Str::limit(strip_tags($post->body ?? 'Nog geen inhoud beschikbaar.'), 120, '...') }}
+                            </div>
+                            <div class="flex items-center justify-between mt-auto pt-2">
+                                <span class="text-xs text-gray-400 font-mono">
+                                    @if($post->publish_date)
+                                        Posted on {{ \Illuminate\Support\Carbon::parse($post->publish_date)->format('d F Y') }}
+                                    @endif
+                                </span>
+                                <a href="{{ route('news.show', $post->id) }}"
+                                   class="inline-block bg-blue-700 text-white py-2 px-4 rounded shadow hover:bg-blue-800 transition text-sm font-semibold ml-2">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+            </div>
+        @else
+            <div class="bg-white p-8 rounded-lg shadow text-center text-gray-400 max-w-lg mx-auto">
+                No news articles yet.
+            </div>
+        @endif
+
+        <div class="flex justify-end mt-10">
+            <a href="{{ url('/news') }}"
+               class="inline-block bg-black text-white font-semibold text-lg py-3 px-6 rounded-lg transition duration-300 hover:bg-white hover:text-black hover:underline shadow-md">
+                View All News
+            </a>
         </div>
     </div>
 </section>
