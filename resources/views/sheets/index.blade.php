@@ -1,7 +1,5 @@
 @extends('layout.app')
 
-@section('title', 'Nieuws - PianoSite')
-
 @section('hero')
     <section class="relative h-[75vh] bg-[url('/public/images/img.png')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
         <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
