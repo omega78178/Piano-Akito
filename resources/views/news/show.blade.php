@@ -1,5 +1,5 @@
 @php use Illuminate\Support\Carbon; @endphp
-@extends('layout')
+@extends('layout.app')
 
 @section('content')
     <main class="pt-24 max-w-4xl mx-auto p-6">

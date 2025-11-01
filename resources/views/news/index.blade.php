@@ -31,38 +31,46 @@ use Illuminate\Support\Str; @endphp
         </form>
     </div>
 
-    <div class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         @foreach($news as $post)
-            <article class="bg-white p-6 rounded-lg shadow">
+            <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition group overflow-hidden flex flex-col">
                 @if($post->image)
-                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
-                         class="mb-4 rounded-lg w-full max-h-80 object-cover">
+                    <div class="overflow-hidden">
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
+                             class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition" />
+                    </div>
                 @endif
 
-                <h2 class="text-2xl font-semibold mb-2">
-                    <a href="{{ route('news.show', $post->id) }}" class="text-black ">
-                        {{ Str::limit($post->title, 60, '...') }}
-                    </a>
-                </h2>
-                    <div class="text-gray-800 leading-relaxed">
-                        {{ Str::limit($post->body ?? 'Nog geen inhoud beschikbaar.', 20, '...') }}
+                <div class="p-6 flex flex-col flex-1 h-full">
+                    <h2 class="font-bold text-lg text-blue-900 mb-2 group-hover:text-blue-700 transition">
+                        <a href="{{ route('news.show', $post->id) }}" class="hover:underline">
+                            {{ \Illuminate\Support\Str::limit($post->title, 60, '...') }}
+                        </a>
+                    </h2>
+                    <div class="text-gray-600 leading-relaxed mb-3">
+                        {{ \Illuminate\Support\Str::limit(strip_tags($post->body ?? 'Nog geen inhoud beschikbaar.'), 120, '...') }}
                     </div>
-
-                <!-- Hier komt jouw verwijderen-knop -->
-                <form action="{{ route('news.destroy', $post->id) }}" method="POST"
-                      onsubmit="return confirm('Weet je zeker dat je dit bericht wilt verwijderen?')"
-                      class="mt-3">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit"
-                            class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded">
-                        Verwijderen
-                    </button>
-                </form>
+                    <div class="flex items-center justify-between mt-auto pt-2">
+                    <span class="text-xs text-gray-400 font-mono">
+                        @if($post->publish_date)
+                            Geplaatst op {{ \Illuminate\Support\Carbon::parse($post->publish_date)->format('d F Y') }}
+                        @endif
+                    </span>
+                        <form action="{{ route('news.destroy', $post->id) }}" method="POST"
+                              onsubmit="return confirm('Weet je zeker dat je dit bericht wilt verwijderen?')" class="ml-2">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded shadow transition text-xs font-semibold">
+                                Verwijderen
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </article>
         @endforeach
-
     </div>
+
 </main>
 
 @include('assets.footer')
