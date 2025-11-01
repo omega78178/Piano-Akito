@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.app')
 
 @section('content')
     @if (session('success'))

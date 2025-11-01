@@ -21,7 +21,7 @@
     <div class="relative flex items-center justify-center h-full text-center text-white">
         <div class="p-8 border-100 border-white/0 bg-white/10 rounded-lg">
             <h1 class="text-5xl font-bold mb-4">Welcome to My Piano Blog</h1>
-            <p class="inter text-xl">I want to create an opportunity where you can share your interest
+            <p class="inter text-xl">I want to create an opportunity where we can share your interest
                 and hobby 🎶</p>
 
             <a href="#about-akito" class="block mt-8">
