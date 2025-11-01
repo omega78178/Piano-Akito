@@ -3,10 +3,13 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SheetController;
+use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
-    return view('welcome');
+    $news = News::all();
+    return view('welcome', compact('news'));
 });
 
 Route::get('/news', function () {

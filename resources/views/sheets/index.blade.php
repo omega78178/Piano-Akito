@@ -13,17 +13,31 @@
 
 @section('content')
     <main class="pt-24 max-w-4xl mx-auto p-6">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-            <form action="{{ route('sheet.search') }}" method="GET" class="flex gap-2">
-                <input type="text" name="q" placeholder="Zoek op titel..." class="border border-gray-300 rounded-md px-4 py-2 focus:ring focus:ring-blue-300 transition w-full md:w-64" />
-                <button type="submit" class="bg-blue-700 text-white px-5 py-2 rounded-md font-semibold hover:bg-blue-800 transition">Zoek</button>
+        <div class="mb-8 w-full max-w-lg mx-auto flex flex-col gap-4">
+            <form action="{{ route('sheet.search') }}" method="GET" class="flex w-full gap-2">
+                <input
+                    type="text"
+                    name="q"
+                    placeholder="Search for anime song, k-pop, anything..."
+                    class="border border-gray-300 rounded-md px-4 py-1.5 text-base focus:ring-2 focus:ring-blue-300 flex-1 transition"
+                />
+                <button
+                    type="submit"
+                    class="bg-blue-700 text-white px-5 py-1.5 rounded-md font-semibold text-base hover:bg-blue-800 transition"
+                >
+                    Zoek
+                </button>
             </form>
-            <a href="{{ route('sheets.create') }}" class="bg-green-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-green-700 transition whitespace-nowrap">
+            <a
+                href="{{ route('sheets.create') }}"
+                class="block w-full text-center bg-green-600 text-white py-2 rounded-md font-semibold text-base hover:bg-green-700 transition shadow"
+            >
                 + Nieuwe sheet toevoegen
             </a>
         </div>
 
-        @if(count($sheets) === 0)
+
+    @if(count($sheets) === 0)
             <div class="p-8 bg-gray-50 rounded-lg text-center text-gray-500 shadow">
                 Geen sheets gevonden...
             </div>
@@ -36,8 +50,8 @@
                                 <strong class="text-lg font-bold text-blue-800 group-hover:text-blue-900 transition">{{ $sheet->title }}</strong>
                                 <span class="px-2 py-1 rounded text-xs
                                    @if($sheet->difficulty === 'Beginner') bg-green-100 text-green-700
-                                   @elseif($sheet->difficulty === 'Intermediate') bg-yellow-100 text-yellow-700
-                                   @else bg-red-100 text-red-600
+                                   @elseif($sheet->difficulty === 'Intermediate')
+                                   @else
                                    @endif">
                                    {{ $sheet->difficulty }}
                                 </span>
