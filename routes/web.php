@@ -3,6 +3,8 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SheetController;
+use App\Http\Controllers\Admin\SheetController as AdminSheetController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +38,10 @@ Route::resource('sheets', SheetController::class);
 Route::get('sheet-search', [SheetController::class, 'search'])->name('sheet.search');
 
 
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () { return view('admin.dashboard'); })->name('dashboard');
+    Route::resource('sheets', AdminSheetController::class);
+    Route::resource('news', AdminNewsController::class);
+});
 

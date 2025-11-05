@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout')
 
 @section('title', 'Sheet toevoegen')
 
@@ -42,7 +42,7 @@
             </div>
 
             <div class="flex justify-end space-x-2">
-                <a href="{{ route('sheets.index') }}" class="btn btn-gray">Annuleren</a>
+                <a href="{{ route('admin.sheets.index') }}" class="btn btn-gray">Annuleren</a>
                 <button type="submit" class="btn btn-indigo font-semibold">
                     Toevoegen
                 </button>

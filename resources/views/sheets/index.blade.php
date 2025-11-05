@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('hero')
-    <section class="relative h-[75vh] bg-[url('/public/images/img.png')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
+    <section class="relative h-[75vh] bg-[url('/public/images/Akito-sheets.png')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
         <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
         <div class="relative">
             <h1 class="text-center text-3xl font-bold mb-6 text-white">Akito's Library</h1>
@@ -26,12 +26,6 @@
                     Zoek
                 </button>
             </form>
-            <a
-                href="{{ route('sheets.create') }}"
-                class="block w-full text-center bg-green-600 text-white py-2 rounded-md font-semibold text-base hover:bg-green-700 transition shadow"
-            >
-                + Nieuwe sheet toevoegen
-            </a>
         </div>
 
 
@@ -55,14 +49,6 @@
                                 </span>
                             </div>
                             <a href="{{ asset('storage/' . $sheet->pdf) }}" target="_blank" class="text-blue-600 hover:underline">Bekijk PDF</a>
-                        </div>
-                        <div class="mt-6 flex gap-2">
-                            <a href="{{ route('sheets.edit', $sheet->id) }}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition text-sm font-medium">Bewerk</a>
-                            <form action="{{ route('sheets.destroy', $sheet->id) }}" method="POST" onsubmit="return confirm('Weet je zeker dat je wilt verwijderen?')" class="inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition text-sm font-medium">Verwijder</button>
-                            </form>
                         </div>
                     </li>
                 @endforeach

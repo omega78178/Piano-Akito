@@ -18,14 +18,6 @@
             <div class="mt-6 flex justify-between">
                 <a href="{{ route('news.index') }}" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded">← Terug naar
                     overzicht</a>
-                <form action="{{ route('news.destroy', $post->id) }}" method="POST"
-                      onsubmit="return confirm('Weet je zeker dat je dit bericht wilt verwijderen?')">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
-                        Verwijderen
-                    </button>
-                </form>
             </div>
         </article>
     </main>

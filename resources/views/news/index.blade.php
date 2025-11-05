@@ -11,14 +11,6 @@
 
 @section('content')
     <main class="pt-24 max-w-4xl mx-auto">
-        <div class="flex justify-between items-center mb-12">
-            <form action="{{ route('news.create') }}" method="GET">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
-                    Nieuw bericht toevoegen
-                </button>
-            </form>
-        </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             @foreach($news as $post)
                 <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition group overflow-hidden flex flex-col">
@@ -44,15 +36,6 @@
                             Geplaatst op {{ \Illuminate\Support\Carbon::parse($post->publish_date)->format('d F Y') }}
                         @endif
                     </span>
-                            <form action="{{ route('news.destroy', $post->id) }}" method="POST"
-                                  onsubmit="return confirm('Weet je zeker dat je dit bericht wilt verwijderen?')" class="ml-2">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"
-                                        class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded shadow transition text-xs font-semibold">
-                                    Verwijderen
-                                </button>
-                            </form>
                         </div>
                     </div>
                 </article>
