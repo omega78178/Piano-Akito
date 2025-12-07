@@ -1,4 +1,3 @@
-<div class="Socials flex space-x-7 mt-60 absolute right-50">
     <!-- Instagram -->
     <a href="https://www.instagram.com/akitopiano/" target="_blank" rel="noopener" class="hover:scale-110 transition-transform">
         <img src="{{ asset('images/Instagram.png')}}" class="w-12 h-12">
@@ -12,4 +11,3 @@
     <a href="https://discord.gg/ae2WZd2u9T" target="_blank" rel="noopener" class="hover:scale-110 transition-transform">
         <img src="{{ asset('images/discord.png')}}" class="w-14 h-14 ">
     </a>
-</div>

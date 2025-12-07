@@ -1,10 +1,17 @@
 @extends('layout.app')
 
 @section('hero')
-    <section class="relative h-[75vh] bg-[url('/public/images/nieuws.jpg')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
-        <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
-        <div class="relative">
-            <h1 class="text-center text-3xl font-bold mb-6 text-white">News</h1>
+    <section
+        class="relative h-screen bg-cover bg-center bg-fixed -z-10"
+        style="background-image: url('{{ asset('images/nieuws.jpg') }}');">
+        {{-- Donkere overlay --}}
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        {{-- Hero content --}}
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-wide">
+                News
+            </h1>
         </div>
     </section>
 @endsection

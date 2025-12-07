@@ -34,11 +34,11 @@ class SheetController extends Controller
         $validated = $request->validate([
             'title'      => 'required|string|max:255',
             'difficulty' => 'nullable|string|max:50',
-            'pdf_path'   => 'nullable|file|mimes:pdf|max:6144',
+            'pdf'   => 'nullable|file|mimes:pdf|max:6144',
         ]);
         // PDF opslaan indien geüpload
-        if ($request->hasFile('pdf_path')) {
-            $validated['pdf_path'] = $request->file('pdf_path')->store('sheets', 'public');
+        if ($request->hasFile('pdf')) {
+            $validated['pdf'] = $request->file('pdf')->store('sheets', 'public');
         }
         Sheet::create($validated);
         return redirect()->route('admin.sheets.index')->with('success', 'Sheet toegevoegd!');
@@ -70,10 +70,10 @@ class SheetController extends Controller
         $validated = $request->validate([
             'title'      => 'required|string|max:255',
             'difficulty' => 'nullable|string|max:50',
-            'pdf_path'   => 'nullable|file|mimes:pdf|max:6144',
+            'pdf'   => 'nullable|file|mimes:pdf|max:6144',
         ]);
-        if ($request->hasFile('pdf_path')) {
-            $validated['pdf_path'] = $request->file('pdf_path')->store('sheets', 'public');
+        if ($request->hasFile('pdf')) {
+            $validated['pdf'] = $request->file('pdf')->store('sheets', 'public');
         }
         $sheet->update($validated);
         return redirect()->route('admin.sheets.index')->with('success', 'Sheet bijgewerkt!');

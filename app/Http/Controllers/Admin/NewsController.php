@@ -57,6 +57,7 @@ class NewsController extends Controller
     public function edit(string $id)
     {
         $news = News::findOrFail($id);
+
         return view('admin.news.edit', compact('news'));
     }
 
@@ -77,7 +78,11 @@ class NewsController extends Controller
             $validated['image'] = $request->file('image')->store('news', 'public');
         }
         $news->update($validated);
-        return redirect()->route('admin.news.index')->with('success', 'Nieuws bijgewerkt!');
+
+        // Zet hier tijdelijk:
+        dd($news->body);
+
+        // return redirect()->route('admin.news.index')->with('success', 'Nieuws bijgewerkt!');
     }
 
     /**

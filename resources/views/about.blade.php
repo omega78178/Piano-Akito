@@ -1,10 +1,16 @@
 @extends('layout.app')
 
 @section('hero')
-    <section class="relative h-[60vh] bg-[url('/public/images/Omega.jpg')] bg-cover bg-center bg-fixed flex items-center justify-center">
+    <section
+        class="relative h-[60vh] bg-[url('/public/images/Omega.jpg')] bg-cover bg-center bg-fixed flex items-center justify-center -z-10">
+        {{-- Donkere overlay --}}
         <div class="absolute inset-0 bg-black/50"></div>
+
+        {{-- Hero content --}}
         <div class="relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">About Me</h1>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
+                About Me
+            </h1>
             <p class="text-white text-lg md:text-2xl opacity-80 max-w-xl mx-auto">
                 Leer meer over mijn passie voor piano, muziek en web development!
             </p>

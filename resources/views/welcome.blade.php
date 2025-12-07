@@ -37,27 +37,20 @@
     </div>
 </section>
 
-<!-- About Akito Section -->
-<section id="about-akito" class="bg-white=
- py-60 px-20 ">
-    <div class="max-w-6xl mx-auto md:flex md:flex-row-reverse gap-12 items-center md:right-12">
+<section id="about-akito" class="relative bg-white py-40 px-12 md:px-40">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row-reverse md:items-center md:gap-x-16 space-y-8 md:space-y-0">
 
         <!-- Tekstgedeelte -->
-        <div>
-            <h1 class="text-3xl md:text-4xl font-bold text-black mb-6">
-                About Akito
-            </h1>
+        <div class="flex-1">
+            <h1 class="text-3xl md:text-4xl font-bold text-black mb-6">About Akito</h1>
             <p class="text-black leading-relaxed mb-8">
                 Akito has played many piano covers, especially from anime and video
-                games, bringing their unique interpretation and emotion into each
-                performance. Their repertoire includes iconic pieces from series
-                like <span class="font-semibold">Attack on Titan</span>,
-                <span class="font-semibold">Naruto</span>, and
-                <span class="font-semibold">Final Fantasy</span>, captivating
-                audiences with a blend of technical mastery and heartfelt
-                expression. Beyond covers, Akito also explores original compositions
-                and creative arrangements, continuously refining their musical
-                style.
+                games, bringing his unique interpretation and clarity into each
+                performance. Their repertoire includes iconic pieces from series such as <span class="font-semibold">Attack on Titan</span>,
+                <span class="font-semibold">Naruto</span>,
+                and <span class="font-semibold">Final Fantasy</span>,
+                captivating audiences with a technical mastery over the piano and sincere expression.
+                In addition to covers, Akito also explores original compositions and creative arrangements, continuously refining their musical style..
             </p>
             <a href="{{ url('/about') }}"
                class="inline-block px-6 py-3 bg-black text-white font-medium rounded-xl shadow-md hover:bg-blue-800 transition">
@@ -65,17 +58,18 @@
             </a>
         </div>
 
-        <!-- Socials include -->
-        <div class="flex flex-col items-center md:items-start">
+        <!-- Socials (blijft zoals je het had, maar kan ook buiten deze flex-div als ze altijd rechtsonder moeten komen) -->
+        <div class="absolute bottom-4 right-4 md:bottom-16 md:right-16 flex flex-row space-x-6 z-50">
             @include('assets.socials')
         </div>
 
         <!-- Afbeelding -->
-        <div class="flex justify-center">
+        <div class="flex justify-center md:block flex-shrink-0">
             <img src="{{ asset('images/Omega.jpg') }}"
                  alt="Omega"
-                 class="w-300 h-72 rounded-full border-4 border-white shadow-lg object-cover">
+                 class="w-72 md:w-96 h-auto rounded-full border-4 border-white shadow-lg object-cover" />
         </div>
+
     </div>
 </section>
 
@@ -85,7 +79,7 @@
         <h2 class="text-4xl font-bold mb-6 text-gray-800 text-center">News</h2>
 
         @if(isset($news) && $news->count())
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 @foreach($news as $post)
                     <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition group flex flex-col overflow-hidden">
                         @if($post->image)

@@ -1,10 +1,18 @@
 @extends('layout.app')
-
 @section('hero')
-    <section class="relative h-[75vh] bg-[url('/public/images/Akito-sheets.png')] bg-cover bg-center bg-fixed max-w-8xl mx-auto p-100">
-        <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
-        <div class="relative">
-            <h1 class="text-center text-3xl font-bold mb-6 text-white">Akito's Library</h1>
+    <section
+        class="relative h-[60vh] bg-[url('/public/images/akito-sheets.png')] bg-cover bg-center bg-fixed flex items-center justify-center -z-10">
+        {{-- Donkere overlay --}}
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        {{-- Hero content --}}
+        <div class="relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+                Akito's Library
+            </h1>
+            <p class="text-white text-base md:text-lg opacity-80 max-w-xl mx-auto">
+                Ontdek alle beschikbare sheets en muziekarrangementen van Akito.
+            </p>
         </div>
     </section>
 @endsection

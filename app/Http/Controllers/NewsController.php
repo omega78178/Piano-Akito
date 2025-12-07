@@ -66,7 +66,8 @@ class NewsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $news = News::findOrFail($id);
+        return view('news.edit', compact('news'));
     }
 
     /**
@@ -74,7 +75,23 @@ class NewsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'image' => 'nullable|image|max:2048'
+        ]);
+
+        $news = News::findOrFail($id);
+
+        // Handle image upload if present
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('news', 'public');
+        }
+
+        $news->update($validated);
+        $news->save();
+
+        return redirect()->route('news.index')->with('success', 'Nieuwsbericht bijgewerkt!');
     }
 
     /**
