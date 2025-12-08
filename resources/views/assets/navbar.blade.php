@@ -11,7 +11,7 @@
         <a href="{{ url('/') }}" class="flex items-center">
             <img src="{{ asset('images/LogoAkito.png') }}"
                  alt="Logo Akito"
-                 class="h-12 w-auto object-contain" />
+                 class="h-18 w-auto object-contain" />
         </a>
 
         {{-- Desktop links --}}

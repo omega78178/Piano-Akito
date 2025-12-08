@@ -18,7 +18,7 @@
 
 @section('content')
     <main class="pt-24 max-w-4xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             @foreach($news as $post)
                 <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition group overflow-hidden flex flex-col">
                     @if($post->image)

@@ -13,9 +13,6 @@
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
                 Contact
             </h1>
-            <p class="text-sm md:text-lg lg:text-xl text-white/80 max-w-xl mx-auto">
-                Neem gerust contact op voor vragen, verzoeken of samenwerkingen.
-            </p>
         </div>
     </section>
 @endsection

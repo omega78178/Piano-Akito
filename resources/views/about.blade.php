@@ -11,9 +11,6 @@
             <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
                 About Me
             </h1>
-            <p class="text-white text-lg md:text-2xl opacity-80 max-w-xl mx-auto">
-                Leer meer over mijn passie voor piano, muziek en web development!
-            </p>
         </div>
     </section>
 @endsection
@@ -29,23 +26,21 @@
             <!-- Persoonlijke tekst -->
             <div class="flex-1">
                 <p class="text-lg text-gray-700 mb-6">
-                    Hi! I’m Akito — a passionate piano player and web developer.
-                    My musical journey started when I was still a kid: I’ve played covers from all sorts of anime and games, like
+                    Hi! I’m Akito — a piano player who loves performing anime music, and currently studying for my bachelor of ICT.
+                    I first started playing piano when I was 14.: I’ve played covers of anime and games, such as
                     <span class="font-semibold">Final Fantasy</span>,
                     <span class="font-semibold">Naruto</span> and
                     <span class="font-semibold">Attack on Titan</span>.
-                    Piano is not just a hobby, it’s where I can let emotion and creativity flow.
+                    Piano is my hobby and it is also my way of expressing my emotions.
                 </p>
+                <p class="text-md text-gray-600 mb-6"> Besides playing the piano, this is the website where I will share my sheet music arrangements in the future,
+                    tips for pianists who want to play anime music, game soundtracks,
+                    and maybe even K-pop in the future — who knows. You’ll also find updates on my musical journey. It’s the website I’m most proud of. </p>
                 <p class="text-md text-gray-600 mb-6">
-                    Besides the keys, I love building and designing websites – especially with Laravel and Tailwind CSS.
-                    I enjoy making custom projects, like this one, that help unite people who share a passion for music or technology.
-                </p>
-                <p class="text-md text-gray-600 mb-6">
-                    I’m always learning: whether it's debugging code, discovering new piano soundtracks, or tweaking my site’s design.
-                    On this blog, you’ll find updates about my musical journey, tips for beginners, and site features I’m proud of.
+                    If you have any questions, requests, or suggestions for improving, please don't hesitate to contact me.
                     Feel free to reach out or share your own music!
                 </p>
-                <a href="mailto:{{ config('mail.from.address') }}"
+                <a href="{{ url('contact') }}"
                    class="inline-block mt-4 px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-900 shadow transition">
                     Contact me
                 </a>
