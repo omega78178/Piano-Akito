@@ -44,12 +44,12 @@
         <div class="flex-1">
             <h1 class="text-3xl md:text-4xl font-bold text-black mb-6">About Akito</h1>
             <p class="text-black leading-relaxed mb-8">
-                Akito has played many piano covers, especially from anime and video
-                games, bringing his performance with joy and harmony. His repertoire includes iconic pieces from series such as <span class="font-semibold">Attack on Titan</span>,
+                I've played many piano covers, especially from anime and video
+                games, bringing his performance with joy and harmony. My repertoire includes iconic pieces from series such as <span class="font-semibold">Attack on Titan</span>,
                 <span class="font-semibold">Naruto</span>,
                 and <span class="font-semibold">Final Fantasy</span>,
                 captivating audiences with a technical skill over the piano and sincere expression.
-                In addition to covers, Akito also explores original compositions and creative arrangements, continuously refining his musical style
+                In addition to covers, i've also explores original compositions and creative arrangements, continuously refining his musical style
             </p>
             <a href="{{ url('/about') }}"
                class="inline-block px-6 py-3 bg-black text-white font-medium rounded-xl shadow-md hover:bg-blue-800 transition">
@@ -127,17 +127,17 @@
     </div>
 </section>
 
-<div class="text-center py-20 bg-white border-t border-[#e6d8b8]/30">
-    <div class="Sheet-link mb-8">
-        <h1 class="text-4xl font-bold mb-6 text-gray-800">Sheets</h1>
+<div class="relative text-center py-20 border-t border-[#e6d8b8]/30
+            bg-cover bg-center"
+     style="background-image: url('{{ asset('images/Sheets.png') }}');">
+    {{-- Donkere overlay voor leesbaarheid --}}
+    <div class="absolute inset-0 bg-black/50"></div>
 
-        <img src="{{ asset('images/Sheets.jpg') }}"
-             alt="Sheet Music"
-             class="w-full max-w-3xl mx-auto rounded-xl shadow-lg mb-6">
-    </div>
+    {{-- Inhoud boven de overlay --}}
+    <div class="relative max-w-3xl mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-6 text-white">Sheets</h1>
 
-    <div class="Sheet-text max-w-3xl mx-auto text-left">
-        <p class="max-w-3xl mx-auto text-gray-700 mb-8 text-lg">
+        <p class="text-gray-100 mb-8 text-lg text-left">
             Explore my collection of sheet music! Feel free to use these sheets for your practice,
             performances, or personal enjoyment. Whether you're a beginner or an advanced musician,
             I hope you find something inspiring here.

@@ -10,7 +10,7 @@
 
         {{-- Hero content --}}
         <div class="relative z-10 text-center px-4">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
+            <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
                 Contact
             </h1>
         </div>

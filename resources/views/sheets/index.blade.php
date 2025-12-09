@@ -10,9 +10,6 @@
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
                 Akito's Library
             </h1>
-            <p class="text-white text-base md:text-lg opacity-80 max-w-xl mx-auto">
-                Ontdek alle beschikbare sheets en muziekarrangementen van Akito.
-            </p>
         </div>
     </section>
 @endsection
@@ -42,7 +39,7 @@
                 Geen sheets gevonden...
             </div>
         @else
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ul class="grid grid-cols-1 md:grid-cols-1 gap-6">
                 @foreach($sheets as $sheet)
                     <li class="bg-white border rounded-lg shadow-sm p-6 flex flex-col justify-between hover:shadow-xl transition group">
                         <div>
@@ -56,7 +53,7 @@
                                    {{ $sheet->difficulty }}
                                 </span>
                             </div>
-                            <a href="{{ asset('storage/' . $sheet->pdf) }}" target="_blank" class="text-blue-600 hover:underline">Bekijk PDF</a>
+                            <a href="{{ asset('storage/' . $sheet->pdf) }}" target="_blank" class="text-blue-600 hover:underline">Watch PDF</a>
                         </div>
                     </li>
                 @endforeach
