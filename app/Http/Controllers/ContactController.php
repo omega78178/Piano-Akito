@@ -21,7 +21,12 @@ class ContactController extends Controller
             $validated['fname'],
             $validated['email'],
             $validated['message']));
-        return back()->with('success', 'Bedankt voor je bericht!');
+
+        return redirect('/contact#contact')
+            ->with('success', 'Je bericht is verzonden.
+         Je ontvangt zo snel mogelijk een reactie.');
+
+
     }
 
 }

@@ -40,7 +40,7 @@
                         <div class="flex items-center justify-between mt-auto pt-2">
                     <span class="text-xs text-gray-400 font-mono">
                         @if($post->publish_date)
-                            Geplaatst op {{ \Illuminate\Support\Carbon::parse($post->publish_date)->format('d F Y') }}
+                            {{ \Illuminate\Support\Carbon::parse($post->publish_date)->format('d M Y') }}
                         @endif
                     </span>
                         </div>

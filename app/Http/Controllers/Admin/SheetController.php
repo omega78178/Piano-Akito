@@ -11,6 +11,12 @@ class SheetController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        if (! app()->environment('local')) {
+            abort(404);
+        }
+    }
     public function index()
     {
 

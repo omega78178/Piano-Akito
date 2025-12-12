@@ -25,7 +25,7 @@
 
         {{-- Hamburger (alleen mobiel) --}}
         <button id="nav-toggle"
-                class="md:hidden inline-flex items-center justify-center p-3 rounded bg-white/10 hover:bg-white/20 focus:outline-none">
+                class="md:hidden inline-flex items-center justify-center p-3 rounded  hover:bg-white/20 focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round"
                       d="M4 6h16M4 12h16M4 18h16" />

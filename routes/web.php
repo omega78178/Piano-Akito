@@ -26,17 +26,16 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::post('/contact', [ContactController::class, 'submit']);
+
 Route::get('/sheets', function () {
     return view('sheets');
 });
-
-Route::post('/contact', [ContactController::class, 'submit']);
 
 Route::resource('news', NewsController::class);
 
 Route::resource('sheets', SheetController::class);
 Route::get('sheet-search', [SheetController::class, 'search'])->name('sheet.search');
-
 
 
 Route::prefix('admin')->name('admin.')->group(function () {

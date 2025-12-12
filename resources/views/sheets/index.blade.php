@@ -53,7 +53,7 @@
                                    {{ $sheet->difficulty }}
                                 </span>
                             </div>
-                            <a href="{{ asset('storage/' . $sheet->pdf) }}" target="_blank" class="text-blue-600 hover:underline">Watch PDF</a>
+                            <a href="{{ asset('storage/' . $sheet->pdf) }}" target="_blank" class="text-blue-600 hover:underline">Download PDF</a>
                         </div>
                     </li>
                 @endforeach
