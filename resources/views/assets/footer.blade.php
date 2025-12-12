@@ -11,6 +11,9 @@
             <a href="https://discord.gg/ae2WZd2u9T" target="_blank" rel="noopener" class="hover:scale-110 transition-transform">
                 <img src="{{ asset('images/discord.png')}}" class="w-10 h-10" alt="Discord">
             </a>
+            <a href="https://tiktok.com/@akitopiano" target="_blank" rel="noopener" class="hover:scale-110 transition-transform -mt-1">
+                <img src="{{ asset('images/TikTok.png')}}" class="w-12 h-12 ">
+            </a>
         </div>
         <p class="text-sm text-black text-center">© 2025 Akito-piano. All right reserved</p>
     </div>
