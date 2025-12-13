@@ -14,7 +14,7 @@
 @include('assets.navbar')
 
 <!-- Hero section -->
-<section class="h-screen bg-[url('/images/piano.jpg')] bg-cover bg-center bg-fixed relative">
+<section class="h-screen bg-[url('/public/images/piano.jpg')] bg-cover bg-center bg-fixed relative">
     <!-- donkere overlay -->
     <div class="absolute inset-0 bg-black/60"></div>
 
