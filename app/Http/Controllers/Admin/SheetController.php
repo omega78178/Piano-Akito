@@ -85,7 +85,6 @@ class SheetController extends Controller
      */
     public function destroy(string $id)
     {
-        dd('destroy', $id, request()->all());
         $sheet = Sheet::findOrFail($id);
         $sheet->delete();
         return redirect()->route('admin.sheets.index')->with('success', 'Sheet verwijderd!');
