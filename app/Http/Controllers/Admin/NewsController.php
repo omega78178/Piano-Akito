@@ -11,12 +11,6 @@ class NewsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function __construct()
-    {
-        if (! app()->environment('local')) {
-            abort(404);
-        }
-    }
     public function index()
     {
         $news = News::orderByDesc('publish_date')->get();
