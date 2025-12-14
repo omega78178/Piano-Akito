@@ -36,7 +36,7 @@
 
     @if(count($sheets) === 0)
             <div class="p-8 bg-gray-50 rounded-lg text-center text-gray-500 shadow">
-                Geen sheets gevonden...
+                No sheets avaiable
             </div>
         @else
             <ul class="grid grid-cols-1 md:grid-cols-1 gap-6">
