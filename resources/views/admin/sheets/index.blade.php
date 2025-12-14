@@ -30,13 +30,24 @@
                         <span class="text-gray-400">Geen PDF</span>
                     @endif
                 </td>
-                <td class="p-4 flex gap-2">
-                    <a href="{{ route('admin.sheets.edit', $sheet) }}" class="bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition">Bewerk</a>
-                    <form action="{{ route('admin.sheets.destroy', $sheet) }}" method="POST" onsubmit="return confirm('Weet je zeker dat je deze sheet wilt verwijderen?')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition">Verwijder</button>
-                    </form>
+                <td class="p-4">
+                    <div class="flex gap-2">
+                        <a href="{{ route('admin.sheets.edit', $sheet) }}"
+                           class="bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600 transition">
+                            Bewerk
+                        </a>
+
+                        <form action="{{ route('admin.sheets.destroy', $sheet) }}"
+                              method="POST"
+                              onsubmit="return confirm('Weet je zeker dat je deze sheet wilt verwijderen?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                    class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition">
+                                Verwijder
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         @empty
