@@ -12,13 +12,13 @@ class ContactController extends Controller
     public function submit(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'fname' => 'required',
+            'name' => 'required',
             'email' => 'required|email',
             'message' => 'required'
         ]);
         Mail::to('akitopiano78@gmail.com')->send
         (new MyTestEmail(
-            $validated['fname'],
+            $validated['name'],
             $validated['email'],
             $validated['message']));
 

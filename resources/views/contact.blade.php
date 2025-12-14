@@ -38,16 +38,16 @@
             @csrf
 
             <div>
-                <label for="fname" class="block text-left font-medium">Name*</label>
+                <label for="name" class="block text-left font-medium">Name*</label>
                 <input
                     type="text"
-                    id="fname"
-                    name="fname"
-                    value="{{ old('fname') }}"
+                    id="name"
+                    name="name"
+                    value="{{ old('name') }}"
                     required
-                    class="w-full border border-gray-300 rounded px-3 py-2 @error('fname') border-red-500 @enderror"
+                    class="w-full border border-gray-300 rounded px-3 py-2 @error('name') border-red-500 @enderror"
                 >
-                @error('fname')
+                @error('name')
                 <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -68,7 +68,7 @@
             </div>
 
             <div>
-                <label for="message" class="block text-left font-medium">Comments*</label>
+                <label for="message" class="block text-left font-medium">Message*</label>
                 <textarea
                     name="message"
                     id="message"
