@@ -38,7 +38,9 @@ Route::resource('sheets', SheetController::class);
 Route::get('sheet-search', [SheetController::class, 'search'])->name('sheet.search');
 
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')
+        ->name('admin.')
+        ->group(function () {
         Route::get('/', function () {
             return view('admin.dashboard');
         })->name('dashboard');
