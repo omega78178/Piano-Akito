@@ -50,6 +50,7 @@ class SheetController extends Controller
      */
     public function show(string $id)
     {
+        dd('destroy', $id, request()->all());
     }
 
     /**

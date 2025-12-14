@@ -38,7 +38,7 @@
                         </a>
 
                         <form action="{{ route('admin.sheets.destroy', $sheet) }}"
-                              method="POST"
+                              method="GET"
                               onsubmit="return confirm('Weet je zeker dat je deze sheet wilt verwijderen?')">
                             @csrf
                             @method('DELETE')
