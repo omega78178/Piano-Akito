@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Sheet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SheetController extends Controller
 {
@@ -86,6 +87,10 @@ class SheetController extends Controller
     public function destroy(string $id)
     {
         $sheet = Sheet::findOrFail($id);
+
+        if ($sheet->pdf && Storage::disk('public')->exists($sheet->pdf)) {
+            Storage::disk('public')->delete($sheet->pdf);
+        }
         $sheet->delete();
         return redirect()->route('admin.sheets.index')->with('success', 'Sheet verwijderd!');
 
