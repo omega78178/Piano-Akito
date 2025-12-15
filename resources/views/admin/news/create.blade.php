@@ -9,7 +9,7 @@
 
     <h1 class="text-3xl font-bold mb-6">Nieuws toevoegen</h1>
 
-    <form method="POST" action="{{ route('admin.news.store') }}" enctype="multipart/form-data"
+    <form method="POST" action="{{ route('news.store') }}" enctype="multipart/form-data"
           class="bg-white p-6 rounded shadow flex flex-col gap-4 max-w-2xl mx-auto">
         @csrf
 
