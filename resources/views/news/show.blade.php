@@ -16,8 +16,7 @@
             <div class="text-gray-800 leading-relaxed">{{ $post->body }}</div>
 
             <div class="mt-6 flex justify-between">
-                <a href="{{ route('news.index') }}" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded">← Terug naar
-                    overzicht</a>
+                <a href="{{ route('news.index') }}" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded">Back</a>
             </div>
         </article>
     </main>
