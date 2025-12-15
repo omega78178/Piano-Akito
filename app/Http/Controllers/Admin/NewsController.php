@@ -22,9 +22,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        
         return view('admin.news.create');
-
     }
 
     /**
@@ -32,18 +30,18 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        dd('IN STORE', $request->all());
-//        $validated = $request->validate([
-//            'title' => 'required',
-//            'body' => 'required',
-//            'publish_date' => 'required|date',
-//            'image' => 'nullable|image|max:2048'
-//        ]);
-//        if ($request->hasFile('image')) {
-//            $validated['image'] = $request->file('image')->store('news', 'public');
-//        }
-//        News::create($validated);
-//        return redirect()->route('admin.news.index')->with('success', 'Nieuws toegevoegd!');
+
+        $validated = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'publish_date' => 'required|date',
+            'image' => 'nullable|image|max:2048'
+        ]);
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('news', 'public');
+        }
+        News::create($validated);
+        return redirect()->route('admin.news.index')->with('success', 'Nieuws toegevoegd!');
     }
 
     /**
