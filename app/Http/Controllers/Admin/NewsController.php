@@ -79,10 +79,7 @@ class NewsController extends Controller
         }
         $news->update($validated);
 
-        // Zet hier tijdelijk:
-        dd($news->body);
-
-        // return redirect()->route('admin.news.index')->with('success', 'Nieuws bijgewerkt!');
+        return redirect()->route('admin.news.index')->with('success', 'Nieuws bijgewerkt!');
     }
 
     /**
