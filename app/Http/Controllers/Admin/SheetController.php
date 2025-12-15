@@ -51,12 +51,7 @@ class SheetController extends Controller
      */
     public function show(string $id)
     {
-        $sheet = Sheet::findOrFail($id);
-        if ($sheet->pdf && Storage::disk('public')->exists($sheet->pdf)) {
-            Storage::disk('public')->delete($sheet->pdf);
-        }
-        $sheet->delete();
-        return redirect()->route('sheets.index')->with('success', 'Sheet verwijderd!');;
+
     }
 
     /**
@@ -89,15 +84,16 @@ class SheetController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Sheet $sheet)
     {
-        $sheet = Sheet::findOrFail($id);
-
         if ($sheet->pdf && Storage::disk('public')->exists($sheet->pdf)) {
             Storage::disk('public')->delete($sheet->pdf);
         }
-        $sheet->delete();
-        return redirect()->route('admin.sheets.index')->with('success', 'Sheet verwijderd!');
 
+        $sheet->delete();
+
+        return redirect()
+            ->route('admin.sheets.index')
+            ->with('success', 'Sheet verwijderd!');
     }
 }
