@@ -54,6 +54,12 @@ class SheetController extends Controller
         // TEMP: delete logic hier geplaatst omdat destroy-route online niet wil deleten .
         // TODO: verplaatsen naar destroy() zodra het is gefixt.
 
+        $sheet = Sheet::findOrFail($id);
+        if ($sheet->pdf && Storage::disk('public')->exists($sheet->pdf)) {
+            Storage::disk('public')->delete($sheet->pdf);
+        }
+        $sheet->delete();
+        return redirect()->route('sheets.index')->with('success', 'Sheet verwijderd!');
     }
 
     /**
