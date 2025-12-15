@@ -49,7 +49,11 @@ class NewsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // TEMP: delete logic hier geplaatst omdat destroy-route online niet wil vinden .
+        // TODO: verplaatsen naar destroy() zodra het is gefixt.
+        $news = News::findOrFail($id);
+        $news->delete();
+        return redirect()->route('admin.news.index')->with('success', 'Nieuws verwijderd!');
     }
 
     /**

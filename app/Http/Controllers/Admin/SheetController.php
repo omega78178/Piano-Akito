@@ -51,7 +51,7 @@ class SheetController extends Controller
      */
     public function show(string $id)
     {
-        // TEMP: delete logic hier geplaatst omdat destroy-route online niet wil deleten .
+        // TEMP: delete logic hier geplaatst omdat destroy-route online niet wil vinden.
         // TODO: verplaatsen naar destroy() zodra het is gefixt.
 
         $sheet = Sheet::findOrFail($id);
