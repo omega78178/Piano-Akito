@@ -4,7 +4,7 @@
 @endphp
 
 <nav id="main-nav"
-     class="font-open-sans fixed top-0 left-0 w-full z-1 transition-colors duration-500
+     class="font-open-sans fixed top-0 left-0 w-full z-50 transition-colors duration-500
         {{ $isShowPage ? 'bg-black text-white shadow-md' : 'bg-transparent text-white' }}">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {{-- Logo --}}
