@@ -27,7 +27,7 @@
             <div class="flex-1">
                 <p class="text-lg text-gray-700 mb-6">
                     Hi! I’m Akito — a piano player who loves performing anime music, and currently studying for my bachelor of ICT.
-                    I first started playing piano when I was 14.: I’ve played covers of anime and games, such as
+                    I first started playing piano when I was 14. I’ve played covers of anime and games, such as
                     <span class="font-semibold">Final Fantasy</span>,
                     <span class="font-semibold">Naruto</span> and
                     <span class="font-semibold">Attack on Titan</span>.
