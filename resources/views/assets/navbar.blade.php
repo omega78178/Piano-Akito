@@ -37,7 +37,7 @@
 
 {{-- Donkere achtergrond + slide-menu samen --}}
 <div id="nav-overlay"
-     class="md:hidden hidden fixed inset-0 z-[9000] bg-black/60">
+     class="md:hidden hidden fixed inset-0 z-[9000] bg-black/60 overflow-x-hidden">
 
     {{-- Klik op de donkere achtergrond om te sluiten --}}
     <div id="nav-backdrop" class="absolute inset-0"></div>
@@ -45,9 +45,9 @@
     {{-- 60% breed menu links --}}
     <div id="nav-menu"
          class="absolute inset-y-0 left-0 w-4/6 bg-black text-white
-                flex flex-col items-start justify-start space-y-6 px-6 pt-12">
+                flex flex-col items-end justify-start space-y-6 px-6 pt-12 overflow-x-hidden">
 
-        <a href="{{ url('/') }}" class="mb-4">
+        <a href="{{ url('/') }}" class="mb-4 self-start">
             <img src="{{ asset('images/LogoAkito.png') }}"
                  alt="Logo Akito"
                  class="h-50 w-auto object-contain">
