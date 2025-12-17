@@ -15,8 +15,8 @@
 <!-- Hero section -->
 <section class="h-screen md:h-screen bg-[url('/public/images/piano.jpg')] bg-cover bg-center md:bg-fixed relative">
     <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative flex items-center justify-center h-full text-center text-white px-4">
-        <div class="p-6 md:p-8 bg-white/10 rounded-lg">
+    <div class="relative flex items-center justify-center h-full text-center text-white px-12">
+        <div class="p-7 md:p-30 bg-white/10 rounded-lg">
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Welcome to My Akito's Blog</h1>
             <p class="inter text-base sm:text-lg md:text-xl">I want to create an opportunity where we share our interest and hobby's 🎶</p>
             <a href="#about-akito" class="block mt-6 md:mt-8">
@@ -133,10 +133,6 @@
             Explore Sheets
         </a>
     </div>
-</div>
-
-<div>
-    @include('assets.footer')
 </div>
 
 </body>
