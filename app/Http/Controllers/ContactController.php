@@ -23,8 +23,8 @@ class ContactController extends Controller
             $validated['message']));
 
         return redirect('/contact#contact')
-            ->with('success', 'Je bericht is verzonden.
-         Je ontvangt zo snel mogelijk een reactie.');
+            ->with('success', 'Your message has been sent.
+You will receive a response as soon as possible.');
 
 
     }
