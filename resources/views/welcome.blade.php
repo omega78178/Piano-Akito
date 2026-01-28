@@ -1,17 +1,7 @@
 @php use Illuminate\Support\Carbon; use Illuminate\Support\Str; @endphp
 @extends('layout.app')
-    <!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akito - piano</title>
-    @vite('resources/css/app.css')
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
-</head>
-<body class="bg-gray-100 text-gray-900" x-data="{ scrolled: false }"
-      x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })">
 
+@section('content')
 <!-- Hero section -->
 <section class="h-screen md:h-screen bg-[url('/public/images/piano.jpg')] bg-cover bg-center md:bg-fixed relative">
     <div class="absolute inset-0 bg-black/60"></div>
@@ -133,5 +123,4 @@
         </a>
     </div>
 </div>
-</body>
-</html>
+@endsection

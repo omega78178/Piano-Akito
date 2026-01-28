@@ -1,4 +1,4 @@
-<footer class="bg white shadow-inner p-6">
+<footer class="bg-white shadow-inner p-6">
     <div class="flex flex-col items-center justify-center space-y-4">
         <!-- Socials gecentreerd -->
         <div class="flex justify-center space-x-8">

@@ -9,9 +9,13 @@
 <body class="bg-gray-100 text-gray-900">
 @include('assets.navbar')
 @yield('hero')
-<main class="pt-24 max-w-4xl mx-auto p-6">
+@if(request()->path() == '/')
     @yield('content')
-</main>
+@else
+    <main class="pt-24 max-w-4xl mx-auto p-6">
+        @yield('content')
+    </main>
+@endif
 @include('assets.footer')
 </body>
 </html>
