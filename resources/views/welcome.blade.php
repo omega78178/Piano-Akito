@@ -125,8 +125,7 @@
         <h1 class="text-3xl sm:text-4xl md:text-4xl font-bold mb-4 sm:mb-6 text-white">Sheets</h1>
         <p class="text-gray-100 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg text-left sm:text-center">
             Explore my collection of sheet music! Feel free to use these sheets for your practice,
-            performances, or personal enjoyment. Whether you're a beginner or an advanced musician,
-            I hope you find something inspiring here.
+            performances, or enjoyment.
         </p>
         <a href="{{ url('/sheets') }}"
            class="inline-block bg-black text-white font-semibold text-sm sm:text-lg py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition duration-300 hover:bg-white hover:text-black hover:underline shadow-md">
@@ -134,6 +133,5 @@
         </a>
     </div>
 </div>
-
 </body>
 </html>

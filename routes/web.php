@@ -14,10 +14,6 @@ Route::get('/', function () {
     return view('welcome', compact('news'));
 });
 
-Route::get('/news', function () {
-    return view('news');
-});
-
 Route::get('/about', function () {
     return view('about');
 });
@@ -27,10 +23,6 @@ Route::get('/contact', function () {
 });
 
 Route::post('/contact', [ContactController::class, 'submit']);
-
-Route::get('/sheets', function () {
-    return view('sheets');
-});
 
 Route::resource('news', NewsController::class);
 
