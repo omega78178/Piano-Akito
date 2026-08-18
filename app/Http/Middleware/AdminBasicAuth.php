@@ -16,9 +16,16 @@ class AdminBasicAuth
     // app/Http/Middleware/AdminBasicAuth.php
     public function handle($request, Closure $next)
     {
+        $expectedUser = config('admin.user');
+        $expectedPass = config('admin.pass');
+
+        if (empty($expectedUser) || empty($expectedPass)) {
+            return response('Unauthorized', 401, ['WWW-Authenticate' => 'Basic']);
+        }
+
         if (
-            request()->getUser() !== config('admin.user') ||
-            request()->getPassword() !== config('admin.pass')
+            ! hash_equals($expectedUser, (string) request()->getUser()) ||
+            ! hash_equals($expectedPass, (string) request()->getPassword())
         ) {
             return response('Unauthorized', 401, ['WWW-Authenticate' => 'Basic']);
         }

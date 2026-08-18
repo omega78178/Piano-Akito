@@ -32,6 +32,7 @@ Route::get('sheet-search', [SheetController::class, 'search'])->name('sheet.sear
 
 Route::prefix('admin')
         ->name('admin.')
+        ->middleware('admin.basic')
         ->group(function () {
         Route::get('/', function () {
             return view('admin.dashboard');
