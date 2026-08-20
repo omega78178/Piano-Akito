@@ -16,7 +16,7 @@
             </div>
         @endif
 
-        <form action="{{ route('sheets.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <form action="{{ route('admin.sheets.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
 
             <div>

@@ -4,7 +4,7 @@
 @section('content')
     <div class="max-w-2xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-6">Sheet bewerken</h2>
-        <form action="{{ route('sheets.update', $sheet->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.sheets.update', $sheet->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT') {{--Used by updates or editing --}}
 

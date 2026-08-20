@@ -45,18 +45,6 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        // TEMP: delete logic hier geplaatst omdat destroy-route online niet wil vinden .
-        // TODO: verplaatsen naar destroy() zodra het is gefixt.
-        $news = News::findOrFail($id);
-        $news->delete();
-        return redirect()->route('admin.news.index')->with('success', 'Nieuws verwijderd!');
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
@@ -84,10 +72,7 @@ class NewsController extends Controller
         }
         $news->update($validated);
 
-        // Zet hier tijdelijk:
-        dd($news->body);
-
-        // return redirect()->route('admin.news.index')->with('success', 'Nieuws bijgewerkt!');
+        return redirect()->route('admin.news.index')->with('success', 'Nieuws bijgewerkt!');
     }
 
     /**

@@ -4,7 +4,7 @@
 @section('content')
     <div class="max-w-2xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-6">Nieuwsbericht bewerken</h2>
-        <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <label class="block mb-2">Titel

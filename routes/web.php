@@ -24,9 +24,9 @@ Route::get('/contact', function () {
 
 Route::post('/contact', [ContactController::class, 'submit']);
 
-Route::resource('news', NewsController::class);
+Route::resource('news', NewsController::class)->only(['index', 'show']);
 
-Route::resource('sheets', SheetController::class);
+Route::resource('sheets', SheetController::class)->only(['index', 'show']);
 Route::get('sheet-search', [SheetController::class, 'search'])->name('sheet.search');
 
 
@@ -38,8 +38,8 @@ Route::prefix('admin')
             return view('admin.dashboard');
         })->name('dashboard');
 
-        Route::resource('sheets', AdminSheetController::class);
-        Route::resource('news', AdminNewsController::class);
+        Route::resource('sheets', AdminSheetController::class)->except(['show']);
+        Route::resource('news', AdminNewsController::class)->except(['show']);
     });
 
 
